@@ -6,7 +6,10 @@ class Human:
         self.age = age
 
     def __repr__(self):
-        return f"<Human: {self.name}, {self.age}>"
+        return f"Human({self.name}, {self.age})"
+    
+    # def __str__(self):
+    #     return f"<Human: {self.name}, {self.age}>"
 
 humans = [
     Human("Alice", 29),
@@ -49,7 +52,7 @@ print(d)
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = [(n.name +'-'+ str(n.age)) for n in humans]
+e = [(n.name) +'-'+ str(n.age) for n in humans]
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
@@ -63,7 +66,7 @@ print(f)
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = [n.name.upper()  for n in humans ]
+g = [Human(n.name.upper(),n.age + 5) for n in humans ]
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
